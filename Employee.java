@@ -1,12 +1,13 @@
 public class Employee {
    
-    String name;
     private int id;
+    String name;
     
     
-    public Employee(String name, int id) {
-        this.name = name;
+    
+    public Employee( int id,String name) {
         this.id = id;
+        this.name = name;
     }
 
     public String getName() {
@@ -24,6 +25,6 @@ public class Employee {
     public void PrintEmployee(){
         System.out.println("Employees Name: "+name +",id: "+id);
     }
-
+    
 }
 

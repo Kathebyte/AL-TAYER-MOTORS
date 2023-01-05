@@ -67,13 +67,12 @@ public class Vehicule {
         this.typeCar = typeCar;
     }
 
-    public int getWarrantyTime() {
-        if(warrantyTime >1){
-            System.out.println(warrantyTime + " years");
+    public void getWarrantyTime() {
+        if(warrantyTime >1 ) {
+            System.out.println(warrantyTime + "Years");
         }else{
-            System.out.println(warrantyTime + " year");
+            System.out.println(warrantyTime + "Year");
         }
-        return warrantyTime;
     }
 
     public void setWarrantyTime(int warrantyTime) {
@@ -83,7 +82,7 @@ public class Vehicule {
     
     public void PrintVehicule() {
         System.out.println( "Vehicule make:" + make + ", brand:" + brand + ", miliage:" + miliage + "\ncolor:" + color + ", Prices:"
-                + prices + ", typeCar:" + typeCar + "warrantyTime:" + warrantyTime );
+                + prices + ", typeCar:" + typeCar + " warrantyTime:" + warrantyTime );
     }
  
    

@@ -2,14 +2,14 @@ class Usuario{
     
     String name;
     String phone;
-    private int id;
+    private int idUsario;
     private static int nextId =1;
     
     
-    public Usuario(String name, String phone, int id) {
+    public Usuario(String name, String phone, int idUsario) {
         this.name = name;
         this.phone = phone;
-        this.id = nextId++;
+        this.idUsario = nextId++;
     }
 
 
@@ -25,15 +25,15 @@ class Usuario{
         this.phone = phone;
     }
 
-    public int getId() {
-        return id;
+    public int getidUsario() {
+        return idUsario;
     }
 
 
     public void PrintInformation(){
-        System.out.println("Id: "+id + 
-        "\nName: "+ name +
-        "\nPhone: " + phone);
+        System.out.println("Id Usuario: "+idUsario + 
+        "Name: "+ name +
+        "Phone: " + phone);
     }
 
     

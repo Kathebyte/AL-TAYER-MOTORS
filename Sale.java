@@ -1,28 +1,35 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.sound.midi.Soundbank;
 
 
 
 public class Sale {
+
         private Usuario usuario;
         private Employee employee;
         private Vehicule vehicule;
         private float amount;
         Date date= new Date();
+        private static int nextId;
+        private int idVenta=1;
 
      
-  
-
     public Sale(Usuario usuario,Employee employee,Vehicule vehicule,int i,String string){
-        this.usuario=usuario;
-        this.employee=employee;
-        this.vehicule=vehicule;
-        this.amount=i;
-        this.formattedDate=string;
+            this.usuario=usuario;
+            this.employee=employee;
+            this.vehicule=vehicule;
+            this.amount=i;
+            this.formattedDate=string;
     }
 
+    public Sale(int idVenta){
+        this.idVenta = nextId ++;
+    }
+    
+
+ 
+    
     public Usuario getUsuario() {
         return usuario;
     }
@@ -64,23 +71,21 @@ public class Sale {
         this.vehicule.PrintVehicule();
     }
     
+    public void generateReceipt() {
+        System.out.println("::RECEIPT ::");
+        System.out.println();
+        System.out.println(date);
+        System.out.println("ID VENTA: "+idVenta);
+        this.usuario.PrintInformation();
+        this.employee.PrintEmployee();
+        System.out.println("Precio vehiculo: " + vehicule.getPrices()+
+        "/n Referece Vehicule ");
+        this.vehicule.PrintVehicule();
+
+      }
 
 
-    /*public void PrintInformtion(){
-        System.out.println("USUARIO "+ 
-                            "\n Name :" +usuario.getName() + " Telephone: "+
-                            usuario.getPhone() + " Id: " + usuario.getId() + 
-                            "\nEMPLOYEE "+
-                            "\n Name: " +employee.getName() + " Employee id: " + employee.getId() +
-                            "\n VEHICULE "+ 
-                            "\n make" +vehicule.getMake() + " Brand: " +vehicule.getBrand()+ " Miliage: " + vehicule.getMiliage() + " Color: " + vehicule.getColor()+
-                            "Prices "+ vehicule.getPrices() + " TypeCar: " +vehicule.getTypeCar() + "Warranty Time: "+ vehicule.getWarrantyTime()+ 
-                            "\n SalesPerson Comision: "+ getAmount() + "Date: " + formattedDate);
-                           
-                         
-                              
-    }
-    */
+    
 
     
  
