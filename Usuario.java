@@ -1,15 +1,25 @@
+import java.util.ArrayList;
+
 class Usuario{
     
     String name;
     String phone;
-    private int idUsario;
-    private static int nextId =1;
+    private static int idUsario=100;
     
+    ArrayList< Usuario >usuarios=new ArrayList<>();
+
+    public void addUsuario(String name, String phone){
+        usuarios.add(new Usuario(name, phone));
+    }
+
+    public ArrayList<Usuario>getUsuarios(){
+        return usuarios;
+    }
     
-    public Usuario(String name, String phone, int idUsario) {
+    public Usuario(String name, String phone) {
         this.name = name;
         this.phone = phone;
-        this.idUsario = nextId++;
+        idUsario++;
     }
 
 
@@ -29,11 +39,11 @@ class Usuario{
         return idUsario;
     }
 
-
+    
     public void PrintInformation(){
         System.out.println("Id Usuario: "+idUsario + 
-        "Name: "+ name +
-        "Phone: " + phone);
+        " Name: "+ name +
+        " Phone: " + phone);
     }
 
     

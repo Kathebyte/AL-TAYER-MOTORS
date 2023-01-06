@@ -11,8 +11,7 @@ public class Sale {
         private Vehicule vehicule;
         private float amount;
         Date date= new Date();
-        private static int nextId;
-        private int idVenta=1;
+        private static int idVenta=01;
 
      
     public Sale(Usuario usuario,Employee employee,Vehicule vehicule,int i,String string){
@@ -21,12 +20,10 @@ public class Sale {
             this.vehicule=vehicule;
             this.amount=i;
             this.formattedDate=string;
+            idVenta++;
     }
 
-    public Sale(int idVenta){
-        this.idVenta = nextId ++;
-    }
-    
+
 
  
     
@@ -75,7 +72,7 @@ public class Sale {
         System.out.println("::RECEIPT ::");
         System.out.println();
         System.out.println(date);
-        System.out.println("ID VENTA: "+idVenta);
+        System.out.println("ID VENTA: "+ idVenta);
         this.usuario.PrintInformation();
         this.employee.PrintEmployee();
         System.out.println("Precio vehiculo: " + vehicule.getPrices()+
