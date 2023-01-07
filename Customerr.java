@@ -4,7 +4,8 @@ class Usuario{
     
     String name;
     String phone;
-    private static int idUsario=100;
+    private static int nextId=100;
+    private int id;
     
     ArrayList< Usuario >usuarios=new ArrayList<>();
 
@@ -19,7 +20,7 @@ class Usuario{
     public Usuario(String name, String phone) {
         this.name = name;
         this.phone = phone;
-        idUsario++;
+        this.id=nextId;
     }
 
 
@@ -35,13 +36,13 @@ class Usuario{
         this.phone = phone;
     }
 
-    public int getidUsario() {
-        return idUsario;
+    public int getId() {
+        return id;
     }
 
     
     public void PrintInformation(){
-        System.out.println("Id Usuario: "+idUsario + 
+        System.out.println("Id Usuario: "+id + 
         " Name: "+ name +
         " Phone: " + phone);
     }
@@ -49,3 +50,12 @@ class Usuario{
     
 
 }
+
+//phoneNumber
+/*  public void setPhoneNumbre(String phoneNumber) {
+        if (phoneNumber.length() > 8){
+            System.out.println("El numero telefonico debe de ser de 6 digitos maximo");
+        }else if(phoneNumber.length()==8){
+            this.phoneNumber = phoneNumber;}
+    }
+     */

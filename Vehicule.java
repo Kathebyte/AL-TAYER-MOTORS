@@ -6,10 +6,10 @@ public class Vehicule {
     String color;
     float prices;
     String typeCar;
-    int warrantyTime;
+    String warrantyTime;
     
     public Vehicule(String make, String brand, float miliage, String color, float prices, String typeCar,
-            int warrantyTime) {
+        String warrantyTime) {
         this.make = make;
         this.brand = brand;
         this.miliage = miliage;
@@ -67,22 +67,18 @@ public class Vehicule {
         this.typeCar = typeCar;
     }
 
-    public void getWarrantyTime() {
-        if(warrantyTime >1 ) {
-            System.out.println(warrantyTime + "Years");
-        }else{
-            System.out.println(warrantyTime + "Year");
-        }
+    public String getWarrantyTime() {
+        return warrantyTime + " YEARS";
     }
 
-    public void setWarrantyTime(int warrantyTime) {
+    public void setWarrantyTime(String warrantyTime) {
         this.warrantyTime = warrantyTime;
     }
 
     
     public void PrintVehicule() {
         System.out.println( "Vehicule make:" + make + ", brand:" + brand + ", miliage:" + miliage + "\ncolor:" + color + ", Prices:"
-                + prices + ", typeCar:" + typeCar + " warrantyTime:" + warrantyTime );
+                + prices + ", typeCar:" + typeCar + " warrantyTime:" + getWarrantyTime() );
     }
  
    
