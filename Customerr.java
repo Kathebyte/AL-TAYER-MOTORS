@@ -20,7 +20,7 @@ class Usuario{
     public Usuario(String name, String phone) {
         this.name = name;
         this.phone = phone;
-        this.id=nextId;
+        id=nextId++;
     }
 
 
