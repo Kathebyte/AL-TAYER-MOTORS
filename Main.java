@@ -1,44 +1,35 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-
-        /*Sale sale1= new Sale(new Usuario("Katherine Benjumea ", "0587125874"),new Employee(0, null), 
-        new Vehicule("Ford", "Escape", 12000, "Blue", 25000, "SV", "5"),1500,("15,12,2022"));
-        System.out.println(":::::::::::::");
-        sale1.PrintAllInformation();
-        sale1.generateReceipt();
-        */
+    System.out.println("****************************");
         
-        
+    //imprimir empleaods estaticos   
+    List<Employee> staticEmployees = Employee.getStaticEmployees();
 
-        System.out.println("****************************");
-        Usuario usuario1 = new Usuario(null, null);
-        usuario1.addUsuario("Katherine", "2123644");
-        usuario1.addUsuario("Carmen", "123456");
-        usuario1.addUsuario("Melisa", "678945");
-        usuario1.addUsuario("Andrea", "12345687");
-
-        ArrayList<Usuario> usuarios = usuario1.getUsuarios();
-
-        for (Usuario user : usuarios) {
-        user.PrintInformation();
-        }
-        
-        
-
-        
-       
-
-        
-    }
-}
-        /*EmployeeData employeeData1 = new EmployeeData();
-
-        /*for (Employee e : employeeData1.getEmployee()) {
+    for (Employee e : staticEmployees) {
         System.out.println("ID: " + e.getId());
         System.out.println("Nombre: " + e.getName());
-        */
+        System.out.println("Phone : " + e.getPhoneNumber());
+        System.out.println("Email: " + e.getEmail());
+    }    
+    System.out.println("****************************");
+        
+//Creacion nuevo usuario
+    Usuario usuario1 = new Usuario(null, null, null);
+    
+    usuario1.addUsuario("Katherine", "315-432-2332","Kathe123@email.com");
+    usuario1.addUsuario("Carmen", "315-123-2332","carmen@email.com");
+    usuario1.addUsuario("Melisa", "321-432-2332","Melisas@email.com");
+    usuario1.addUsuario("Andrea", "321-432-2332","andrea123@email.com");
 
+    ArrayList<Usuario> usuarios = usuario1.getUsuarios();
+        for (Usuario user : usuarios) {
+        user.PrinterUser();
+        }
+    }
+}
+        
 

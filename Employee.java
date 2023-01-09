@@ -1,30 +1,24 @@
-public class Employee {
+import java.util.Arrays;
+import java.util.List;
+
+public class Employee extends User{
    
-    private int id;
-    String name;
-    
-    
-    
-    public Employee( int id,String name) {
-        this.id = id;
-        this.name = name;
+    public Employee(String name, String phoneNumber, String email) {
+        super(name, phoneNumber, email);
+        //TODO Auto-generated constructor stub
     }
 
-    public String getName() {
-        return name;
+    private static final List<Employee> STATIC_EMPLOYEES = Arrays.asList(
+        new Employee( "Mariana Bedoya", "312-432-2332", "mari.bedo@poo.com"),
+        new Employee( "Janet Osorio", "312-432-1111", "jane.oso@@poo.com"),
+        new Employee( "Alejandro Munoz", "312-123-2132", "Alejandr.mun@poo.com")   
+    );
+   
+    public static List<Employee> getStaticEmployees() {
+        return STATIC_EMPLOYEES;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void PrintEmployee(){
-        System.out.println("Employees Name: "+name +",id: "+id);
-    }
-    
 }
+
+    
+   
 

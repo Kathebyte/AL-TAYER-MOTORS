@@ -62,19 +62,19 @@ public class Sale {
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
     String formattedDate = formatter.format(date);
     
-    public void PrintAllInformation(){
-        this.employee.PrintEmployee();
-        this.usuario.PrintInformation();
-        this.vehicule.PrintVehicule();
-    }
+    // public void PrintAllInformation(){
+    //     this.employee.PrintEmployee();
+    //     this.usuario.PrintInformation();
+    //     this.vehicule.PrintVehicule();
+    // }
     
     public void generateReceipt() {
         System.out.println("::RECEIPT ::");
         System.out.println();
         System.out.println(date);
         System.out.println("ID VENTA: "+ idVenta);
-        this.usuario.PrintInformation();
-        this.employee.PrintEmployee();
+        //this.usuario.PrintInformation();
+        //this.employee.PrintEmployee();
         System.out.println("Precio vehiculo: " + vehicule.getPrices()+
         "/n Referece Vehicule ");
         this.vehicule.PrintVehicule();
