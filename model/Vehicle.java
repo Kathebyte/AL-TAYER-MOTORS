@@ -1,5 +1,5 @@
 package model;
-public class Vehicule {
+public class Vehicle {
 
     String make;
     String brand;
@@ -9,7 +9,7 @@ public class Vehicule {
     String typeCar;
     String warrantyTime;
     
-    public Vehicule(String make, String brand, float miliage, String color, float prices, String typeCar,
+    public Vehicle(String make, String brand, float miliage, String color, float prices, String typeCar,
         String warrantyTime) {
         this.make = make;
         this.brand = brand;

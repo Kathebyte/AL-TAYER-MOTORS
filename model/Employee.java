@@ -12,14 +12,12 @@ public class Employee extends User{
         this.employeeId = employeeId;
 
     }
-        
-  
-    
+
     @Override
-    public String toString() {
-        
+    public String toString() {        
         return super.toString() ;
     }
+    
     @Override
     public void showInformation() {
        System.out.println("Employee Company AL TAYER MOTORS");

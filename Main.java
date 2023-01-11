@@ -10,9 +10,13 @@ public class Main {
 
     public static void main(String[] args) {
     System.out.println("****************************");
-    Employee empleado = Employee();
+    User usuario1= new Usuario("Katherine", "Kathe123@gmail.com");
+    System.out.println(usuario1);
+    User usuario2= new Usuario("Katherine", "Kathe123@gmail.com");
+    System.out.println(usuario2);
+    }
     
 
 }
-}
+
   
