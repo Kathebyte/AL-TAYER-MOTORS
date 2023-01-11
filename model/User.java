@@ -1,4 +1,5 @@
-public class User{
+package model;
+public abstract class User {
     private int id;
     private String name;
     private String phoneNumber;
@@ -6,9 +7,8 @@ public class User{
     private String email;
     private static int nextId=100;
     
-    public User(String name, String phoneNumber, String email) {
+    public User(String name, String email) {
         this.name = name;
-        this.phoneNumber = phoneNumber;
         this.email = email;
         id=nextId++;
     }
@@ -28,8 +28,6 @@ public class User{
     public String getPhoneNumber() {
         return phoneNumber;
     }
-
-  
 
     public void setPhoneNumber(String phoneNumber) {
         if (phoneNumber.length() > 8){
@@ -54,9 +52,17 @@ public class User{
     }
 
    public void PrinterUser(){
-    System.out.println("ID : "+id + " Name : " +name 
-            + " Phone: "+phoneNumber + " Email: "+ email);
+    System.out.println("ID : "+id + "\nName : " +name 
+             + " Email: "+ email);
    }
 
+   @Override
+   public String toString() {
+       return "Id: " +id +" User: "+ name + " Email: "+ email;
+   }
+
+   public abstract void showInformation();
+
+   
   
 }

@@ -1,3 +1,4 @@
+package model;
 public class Vehicule {
 
     String make;
@@ -82,9 +83,7 @@ public class Vehicule {
     }
  
    
-     
-
-
+ 
 
     
 }
