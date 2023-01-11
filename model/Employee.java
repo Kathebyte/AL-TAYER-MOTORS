@@ -1,23 +1,22 @@
 package model;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class Employee extends User{
-    private String employeeId;
+    private Integer salary;
    
-
-    public Employee(String name, String email, String employeeId) {
+    public Employee(String name, String email, Integer salary) {
         super(name, email);
-        this.employeeId = employeeId;
+        this.salary = salary;
+    }
 
+    public Integer getSalary () {
+        return salary;
     }
 
     @Override
     public String toString() {        
-        return super.toString() ;
+        return super.toString() + " Salary: " + salary ;
     }
-    
+
     @Override
     public void showInformation() {
        System.out.println("Employee Company AL TAYER MOTORS");
