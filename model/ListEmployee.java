@@ -8,10 +8,13 @@ public class ListEmployee {
 
     public ListEmployee(){
         empleados = new ArrayList<>();
-        empleados.add(new Employee("Mariana Bedoya", "Maribedoya@opo.com", 1000));
-        empleados.add(new Employee("Janet Osorio", "Jane.oso@opo.com", 2800));
-        empleados.add(new Employee("Alejandro Munoz", "Alejo.mun@opo.com", 5400));
+        empleados.add(new Employee("Mariana Bedoya", "312432230","Medellin","mariana.bedoya@email.com",1500,"Sales Manager"));
+        empleados.add(new Employee("Cristiano Gutierrez", "312111237","Envigado","Cristiano.Gutierrez@email.com",2000,"Sales Manager"));
+        empleados.add(new Employee("Camila Osorio", "312431232","Medellin","Camila.Osorio",2000,"Sales Manager"));
+        empleados.add(new Employee("Tifa Mejia", "312321231","Itagui","Camila.Osorio",2800,"Sales Manager"));
+        empleados.add(new Employee("Carolina Montoya", "312231234","Sabaneta","Carolina.Montoya",12000,"Junior Sales Manager"));
 
+        
     }
     
     public void addEmployee(Employee employee){
@@ -38,6 +41,12 @@ public class ListEmployee {
             totalSalary += employee.getSalary();
         }
         return totalSalary;
+    }
+
+    public void jobPosition(){
+        for (Employee employee : empleados) {
+           System.out.println(employee.getJobPosition());
+        }
     }
 
     public boolean validateIsEmployee(String name) {

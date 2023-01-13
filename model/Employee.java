@@ -4,11 +4,13 @@ public class Employee extends User{
     private Integer employeeId;
     private Integer salary;
     static Integer nextEmployeeId = 200;
-   
-    public Employee(String name, String email, Integer salary) {
-        super(name, email);
-        this.salary = salary;
-        this.employeeId = nextEmployeeId ++;
+    private String jobPosition;
+
+    public Employee(String name, String phoneNumber, String address, String email,int salary,String jobPosition) {
+        super(name, phoneNumber, address, email);
+        this.salary=salary;
+        this.jobPosition=jobPosition;
+        employeeId=nextEmployeeId++;
     }
 
     public Integer getSalary () {
@@ -19,15 +21,22 @@ public class Employee extends User{
         return employeeId;
     }
 
-    @Override
-    public String toString() {        
-        return "EmployeeId: " + employeeId + " " + super.toString() + " Salary: " + salary;
+    public String getJobPosition() {
+        return jobPosition;
+    }
+
+    public void setJobPosition(String jobPosition) {
+        this.jobPosition = jobPosition ; 
     }
 
     @Override
     public void showInformation() {
        System.out.println("Employee Company AL TAYER MOTORS");
         
+    }
+    @Override
+    public String toString() {
+        return  "EmployeeId: "+ employeeId + super.toString() + "\nSalary: "+salary + " Job Position: "+jobPosition; 
     }
    
   

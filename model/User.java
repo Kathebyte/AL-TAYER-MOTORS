@@ -7,8 +7,11 @@ public abstract class User {
     private String email;
     private static int nextId=100;
     
-    public User(String name, String email) {
+ 
+    public User(String name, String phoneNumber, String address, String email) {
         this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
         this.email = email;
         id=nextId++;
     }
@@ -56,11 +59,13 @@ public abstract class User {
              + " Email: "+ email);
    }
 
-   @Override
-   public String toString() {
-       return "Id: " +id +" User: "+ name + " Email: "+ email;
-   }
-
    public abstract void showInformation();
+
+@Override
+public String toString() {
+    return " User id:" + id + ", name: " + name + "\nphoneNumber:" + phoneNumber + ", address:" + address + ", email:"
+            + email;
+
+}
 
 }
