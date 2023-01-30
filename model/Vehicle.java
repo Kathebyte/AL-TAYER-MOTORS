@@ -1,18 +1,23 @@
 package model;
 public class Vehicle {
+    private int carId;
+    private static int nextId=005;
+    private String make;
+    private String brand;
+    private int year;
+    private Float miliage;
+    private String color;
+    private Double prices;
+    private String typeCar;
+    private String accidentHistory;
+    private String warrantyTime;
 
-    String make;
-    String brand;
-    int year;
-    Float miliage;
-    String color;
-    Double prices;
-    String typeCar;
-    String accidentHistory;
-    String warrantyTime;
+    public Vehicle(){
+    }
     
     public Vehicle(String make, String brand,int year, float miliage, String color, double prices, String typeCar,
         String warrantyTime, String accidentHistory) {
+        this.carId=nextId++;
         this.make = make;
         this.brand = brand;
         this.year = year;
@@ -22,6 +27,10 @@ public class Vehicle {
         this.typeCar = typeCar;
         this.warrantyTime = warrantyTime;
         this.accidentHistory = accidentHistory;
+    }
+
+    public int getCarId() {
+        return carId;
     }
 
     public String getMake() {
@@ -96,13 +105,13 @@ public class Vehicle {
     }
     
     public void PrintVehicule() {
-        System.out.println( "Vehicule make:" + make + ", brand:" + brand + ", miliage:" + miliage + "\ncolor:" + color + ", Prices:"
+        System.out.println( "CarId: " +carId+ ", Vehicule make:" + make + ", brand:" + brand + ", miliage:" + miliage + "\ncolor:" + color + ", Prices:"
                 + prices + ", type Car:" + typeCar + ", History Accident: "+ accidentHistory +", warrantyTime:" + getWarrantyTime()  );
     }
  
     @Override
     public String toString() {
-        return "Vehicule make:" + make + ", brand:" + brand + ", miliage:" + miliage + "\ncolor:" + color + ", Prices:"
+        return "CarId: "+ carId +", Vehicule make:" + make + ", brand:" + brand + ", miliage:" + miliage + "\ncolor:" + color + ", Prices:"
                 + prices + ", type Car:" + typeCar + ", History Accident: "+ accidentHistory +", warrantyTime:" + getWarrantyTime();
 
     }
