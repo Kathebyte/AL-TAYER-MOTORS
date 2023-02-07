@@ -33,7 +33,7 @@ public class SalesPersonComission {
     }
 
     public void setSalesArrayIds(List<String> salesArrayIds) {
-        salesArrayIds = salesArrayIds;
+        this.salesArrayIds = salesArrayIds;
     }
 
     public void calculateComision(){

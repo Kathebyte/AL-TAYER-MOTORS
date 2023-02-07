@@ -54,18 +54,18 @@ public abstract class User {
         this.email = email;
     }
 
-   public void PrinterUser(){
+   public void printUser(){
     System.out.println("ID : "+id + "\nName : " +name 
-             + " Email: "+ email);
+             + " \nEmail: "+ email);
    }
 
    public abstract void showInformation();
 
-@Override
-public String toString() {
-    return " User id:" + id + ", name: " + name + "\nphoneNumber:" + phoneNumber + ", address:" + address + ", email:"
-            + email;
+    @Override
+    public String toString() {
+        return " User id:" + id + ", name: " + name + "\nphoneNumber:" + phoneNumber + ", address:" + address + ", email:"
+                + email;
 
-}
+    }
 
 }

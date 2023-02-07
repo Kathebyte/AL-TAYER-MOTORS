@@ -6,7 +6,6 @@ public class Customer extends User{
         super(name, phoneNumber, address, email);
     }
     
-
     @Override
     public void showInformation() {
         System.out.println("Customer company AL TAYER MOTORS");
@@ -17,4 +16,8 @@ public class Customer extends User{
         return super.toString();
     }
     
+    @Override
+    public void printUser() {
+        super.printUser();
+    }
 }
