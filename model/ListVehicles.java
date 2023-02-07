@@ -24,7 +24,7 @@ public class ListVehicles{
         public void delateVehicle(Vehicle vehicle){
             listaVehiculos.remove(vehicle);
         }
-        public ArrayList<Vehicle> getVehicle(){
+        public ArrayList<Vehicle> getVehicles(){
             return listaVehiculos;
         }
         public void printAllVehicules(){
@@ -32,7 +32,7 @@ public class ListVehicles{
                 System.out.println(vehicle.toString());
             }
         }
-        public void expensiveCar(){
+        public void getMostExpensiveCar(){
             double highestPrice=0;
             Vehicle expensiveCar =null;
             for (Vehicle vehicle : listaVehiculos) {
@@ -45,15 +45,6 @@ public class ListVehicles{
             expensiveCar.PrintVehicule();
         }
 
-        public boolean validateIsVehicle(String brand) {
-            boolean isFound = false;
-            for (Vehicle vehicle : listaVehiculos) {
-                if(vehicle.getBrand() == brand) {
-                    isFound = true;
-                }
-            }
-            return isFound;
-        }
     }
 
     

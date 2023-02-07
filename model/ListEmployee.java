@@ -21,7 +21,7 @@ public class ListEmployee {
         empleados.add(employee);
     }
 
-    public void delateEmployee(Employee employee){
+    public void removeEmployee(Employee employee){
         empleados.remove(employee);
     }
 
