@@ -1,10 +1,10 @@
 package model;
 public class Vehicle {
     private int carId;
-    private static int nextId=005;
+    private static int nextId=1;
     private String make;
     private String brand;
-    private int year;
+    private String year;
     private Float miliage;
     private String color;
     private Double prices;
@@ -15,7 +15,7 @@ public class Vehicle {
     public Vehicle(){
     }
     
-    public Vehicle(String make, String brand,int year, float miliage, String color, double prices, String typeCar,
+    public Vehicle(String make, String brand,String year, float miliage, String color, double prices, String typeCar,
         String warrantyTime, String accidentHistory) {
         this.carId=nextId++;
         this.make = make;
@@ -49,11 +49,11 @@ public class Vehicle {
         this.brand = brand;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
@@ -90,7 +90,7 @@ public class Vehicle {
     }
 
     public String getWarrantyTime() {
-        return warrantyTime + " YEARS";
+        return warrantyTime + " years";
     }
 
     public void setWarrantyTime(String warrantyTime) {
@@ -106,7 +106,7 @@ public class Vehicle {
     
     public void PrintVehicule() {
         System.out.println( "CarId: " +carId+ ", Vehicule make:" + make + ", brand:" + brand + ", miliage:" + miliage + "\ncolor:" + color + ", Prices:"
-                + prices + ", type Car:" + typeCar + ", History Accident: "+ accidentHistory +", warrantyTime:" + getWarrantyTime()  );
+                + prices + ", type Car:" + typeCar + ", History Accident: "+ accidentHistory +", warrantyTime:" + getWarrantyTime() +"\n"  );
     }
  
     @Override
