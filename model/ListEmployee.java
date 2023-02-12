@@ -8,13 +8,11 @@ public class ListEmployee {
 
     public ListEmployee(){
         empleados = new ArrayList<>();
-        empleados.add(new Employee("Mariana Bedoya", "312432230","Medellin","mariana.bedoya@email.com",1500,"Sales Manager"));
-        empleados.add(new Employee("Cristiano Gutierrez", "312111237","Envigado","Cristiano.Gutierrez@email.com",2000,"Sales Manager"));
-        empleados.add(new Employee("Camila Osorio", "312431232","Medellin","Camila.Osorio",2000,"Sales Manager"));
-        empleados.add(new Employee("Tifa Mejia", "312321231","Itagui","Camila.Osorio",2800,"Sales Manager"));
-        empleados.add(new Employee("Carolina Montoya", "312231234","Sabaneta","Carolina.Montoya",12000,"Junior Sales Manager"));
-
-        
+        empleados.add(new Employee("Mariana Bedoya", "312432230","Medellin","mariana.bedoya@email.com",15000,"Sales Manager"));
+        empleados.add(new Employee("Cristiano Gutierrez", "312111237","Envigado","Cristiano.Gutierrez@email.com",14000,"Sales Manager"));
+        empleados.add(new Employee("Camila Osorio", "312431232","Medellin","Camila.Osorio",12000,"Sales Manager"));
+        empleados.add(new Employee("Tifa Mejia", "312321231","Itagui","Camila.Osorio",15000,"Sales Manager"));
+        empleados.add(new Employee("Carolina Montoya", "312231234","Sabaneta","Carolina.Montoya",17000,"Junior Sales Manager"));
     }
     
     public void addEmployee(Employee employee){
@@ -58,5 +56,4 @@ public class ListEmployee {
         }
         return isFound;
     }
-    
 }

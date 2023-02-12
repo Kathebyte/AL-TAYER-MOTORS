@@ -2,7 +2,6 @@
 package Menu;
 import model.*;
 
-import java.net.SocketImpl;
 import java.util.Scanner;
 
 public class Menu {
@@ -34,6 +33,9 @@ public class Menu {
                 case 4:
                     showVehicles();
                     break;
+                case 5:
+                    showEmployee();
+                    break;
                 default:
                     System.out.println("Please select a correct answer");
             }
@@ -41,7 +43,10 @@ public class Menu {
         }while(response !=0);
         teclado.close();
     }
+    private void showEmployee(){
+       employeeList.printAllEmployees();
 
+    }
     private void addVehicle(){
         Scanner infoVehicle = new Scanner(System.in);
 
@@ -122,6 +127,7 @@ public class Menu {
         System.out.println("2. List Customers");
         System.out.println("3. Add Vehicle");
         System.out.println("4. List Vehicle");
+        System.out.println("5. List employee");
         System.out.println("0. Exit");
     }
 
