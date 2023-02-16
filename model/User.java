@@ -1,10 +1,10 @@
 package model;
 public abstract class User {
     private int id;
-    private String name;
-    private String phoneNumber;
-    private String address;
-    private String email;
+    private static String name;
+    private static String phoneNumber;
+    private static String address;
+    private static String email;
     private static int nextId=100;
     
  
@@ -20,7 +20,7 @@ public abstract class User {
         return id;
     }
 
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
@@ -28,7 +28,7 @@ public abstract class User {
         this.name = name;
     }
 
-    public String getPhoneNumber() {
+    public static String getPhoneNumber() {
         return phoneNumber;
     }
 
@@ -39,14 +39,14 @@ public abstract class User {
             this.phoneNumber = phoneNumber;}
     }
 
-    public String getAddress() {
+    public static String getAddress() {
         return address;
     }
 
     public void setAddress(String address) {
         this.address = address;
     }
-    public String getEmail() {
+    public static String getEmail() {
         return email;
     }
 

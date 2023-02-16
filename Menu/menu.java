@@ -21,7 +21,7 @@ public class Menu {
             response= teclado.nextInt();
             switch(response){
                 case 1:
-                    addCustomer();
+                    AddUserBd.addCustomer();
                     break;
                 case 2:
                     showCustomers();
@@ -89,6 +89,7 @@ public class Menu {
         vehiclesList.printAllVehicules();
 
     }
+    
 
     private void addCustomer() {
         Scanner infoCustomer = new Scanner(System.in);
@@ -108,9 +109,16 @@ public class Menu {
         
         // Create customer
         Customer newCustomer = new Customer(name, phoneNumber, address, email);
+        newCustomer.setName(name);
+        newCustomer.setPhoneNumber(phoneNumber);
+        newCustomer.setAddress(address);
+        newCustomer.setEmail(email);
+        AddUserBd.addCustomer();
+        
 
-        // Add Customer to List
-        customerList.addCustomer(newCustomer);
+        // // Add Customer to List
+        // customerList.addCustomer(newCustomer);
+        
 
     }
 
@@ -129,12 +137,9 @@ public class Menu {
         System.out.println("4. List Vehicle");
         System.out.println("5. List employee");
         System.out.println("0. Exit");
-    }
-
-    private void printMenuCar(){
-        System.out.println("Do you want to buy a car");
-        System.out.println("Do you want to sell youy car");
 
     }
+
+
 
 }
