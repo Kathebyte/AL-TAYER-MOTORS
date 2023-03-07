@@ -2,49 +2,51 @@
 package Menu;
 import model.*;
 
+import javax.swing.*;
 import java.util.Scanner;
 
 public class Menu {
 
-    ListCustomer customerList= new ListCustomer();
-    ListVehicles vehiclesList= new ListVehicles();
-    ListEmployee employeeList= new ListEmployee();
-
     public void showMenu(){
-        int response= 0;
-        Scanner teclado= new Scanner(System.in);
-        
-
+        int opciom_menu= 0;
+        String[] botton ={
+        "1. Add Customer",
+        "2. List Customers",
+        "3. Add Vehicle",
+        "4. List Vehicle",
+        "5. List employee",
+        "6. List Sales",
+        "7. Exit"
+        };
 
         do{
-            printMenu();
-            response= teclado.nextInt();
-            switch(response){
-                case 1:
-                    AddUserBd.addCustomer();
-                    break;
-                case 2:
-                    showCustomers();
-                    
-                    break;
-                case 3:
-                    addVehicle();
-                    break;
-                case 4:
-                    showVehicles();
-                    break;
-                case 5:
-                    showEmployee();
-                    break;
-                default:
-                    System.out.println("Please select a correct answer");
+            String response = (String) JOptionPane.showInputDialog(null,"Welcome to al tayer motors","MENU",
+                    JOptionPane.INFORMATION_MESSAGE,null,botton,botton[0]);
+
+
+            //validate que opction select
+
+            for (int i = 0; i < botton.length; i++) {
+                if(response.equals(botton[i])){
+                    opciom_menu = i;
+                }
+            }
+
+            switch (opciom_menu) {
+                case 0 -> addCustomer();
+                case 1 -> showCustomers();
+                case 2 -> addVehicle();
+                case 3 -> showVehicles();
+                case 4-> showEmployee();
+                case 5 -> showSales();
+                default -> {
+                }
             }
             
-        }while(response !=0);
-        teclado.close();
+        }while(opciom_menu !=6);
     }
     private void showEmployee(){
-       employeeList.printAllEmployees();
+       AddDataDb.ListEmployee();
 
     }
     private void addVehicle(){
@@ -75,22 +77,20 @@ public class Menu {
         infoVehicle.nextLine();
 
         System.out.println("Input Warranty time");
-        String warrantyTime = infoVehicle.nextLine();
-
+        int warrantyTime = infoVehicle.nextInt();
+        infoVehicle.next();
         System.out.println("Accident History input : [YES] or [NO]");
         String acctidentHistory = infoVehicle.nextLine();
 
         Vehicle newVehicle = new Vehicle(make, brand, year, miliage, color, prices, typeCar, warrantyTime, acctidentHistory);
-        
-        vehiclesList.addVehicle(newVehicle);
+        AddDataDb.addVehicleBd(newVehicle);
     }
 
     public void showVehicles(){
-        vehiclesList.printAllVehicules();
+        AddDataDb.ListVehicleBd();
 
     }
     
-
     private void addCustomer() {
         Scanner infoCustomer = new Scanner(System.in);
         
@@ -109,37 +109,16 @@ public class Menu {
         
         // Create customer
         Customer newCustomer = new Customer(name, phoneNumber, address, email);
-        newCustomer.setName(name);
-        newCustomer.setPhoneNumber(phoneNumber);
-        newCustomer.setAddress(address);
-        newCustomer.setEmail(email);
-        AddUserBd.addCustomer();
+        AddDataDb.crearCustomerBd(newCustomer);
         
-
-        // // Add Customer to List
-        // customerList.addCustomer(newCustomer);
-        
-
     }
 
     public void showCustomers () {
-       customerList.printList();
+       AddDataDb.ListCustomerBd();
        
     }
-
-    private void printMenu () {
-        System.out.println("\nWelcome to al tayer motors");
-        System.out.println("Select the desired option:");
-        System.out.println("MENU:");
-        System.out.println("1. Add Customer");
-        System.out.println("2. List Customers");
-        System.out.println("3. Add Vehicle");
-        System.out.println("4. List Vehicle");
-        System.out.println("5. List employee");
-        System.out.println("0. Exit");
-
+    private void showSales(){
+        AddDataDb.ListSales();
     }
-
-
 
 }
